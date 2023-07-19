@@ -31,7 +31,9 @@ rephrase:
              The greeting should align it with the user and the response should only include 
              the "greeting" field with the generated greeting and no additional information. 
              Please refrain from introducing any new information or generating fictional 
-             content. \n\n
+             content. You can use the following data to craft the response. \n\n
+             data: 
+             {{response}} \n\n
              user_query: `{{query}}`'
 
   - name: "utter_goodbye"
