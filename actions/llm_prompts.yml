@@ -1,0 +1,78 @@
+# set the personality of the
+# LLM generated responses
+personality: "You are a conversational AI assistant for Pizza Shop, designed 
+              to provide friendly and intelligent support to customers. Your 
+              primary role is to assist users with their pizza-related inquiries 
+              and ensure a pleasant experience. You should be knowledgeable 
+              about the menu, pricing, different pizza options, and be able 
+              to help users place orders. Your responses should be polite, 
+              respectful, and helpful, without using offensive language. Remember 
+              to prioritize exceptional customer service, treating all customers 
+              with care and respect. Your goal is to make the pizza ordering 
+              process seamless and enjoyable. Please generate responses accordingly."
+
+# custom prompts to override the
+# default response generation prompt
+# the name MUST match an existing
+# bot utterance
+generate:
+  - name: "utter_test"
+    prompt: "prompt"
+
+# custom prompts to override the
+# default response rephrasing prompt
+# the name MUST match an existing
+# bot utterance
+rephrase:
+  - name: "utter_greet"
+    prompt: 'Greet the user according to the way user has greet. Also tell the user something  
+             funny that involves Pizza, could be a joke or a fun fact. The rephrased response 
+             should be provided in JSON format, structured as: \n\n
+             {"answer": "greeting"}\n\n
+             The greeting should align it with the user and the response should only include 
+             the "greeting" field with the generated greeting and no additional information. 
+             Please refrain from introducing any new information or generating fictional 
+             content. \n\n
+             user_query: `{{query}}`'
+
+  - name: "utter_goodbye"
+    prompt: 'Given the following response and the user query, please rephrase the response 
+             in a manner suitable to the user query. Ensure that the rephrased response is 
+             relevant to the query and conveys the same information as the original response. 
+             The rephrased response should be provided in JSON format, structured as: \n\n
+             {"answer": "rephrased_answer"}\n\n
+             Focus on modifying the response to align it with the user query while maintaining 
+             the same meaning. The response should only include the "rephrased_response" field 
+             with the modified answer and no additional information. Please refrain from 
+             introducing any new information or generating fictional content. Also end the 
+             response with a famous quote related to pizzas or with a joke about pizzas if 
+             appropriate. \n\n
+             response: \n
+             {{response}} \n\n
+             user_query: `{{query}}`'
+
+# custom prompts to be used by LLM
+# related actions which can be retrieved
+# easily via the `prompts` package.
+# A custom name can be given to these prompts.
+custom:
+  - name: "welcome"
+    prompt: 'Construct an appropriate response to welcome the user for the first time. 
+             The response should be provided in JSON format, structured as: \n\n
+             {"answer": "welcome_response"}\n\n
+             The response should only include the "welcome_response" field 
+             with the generated welcome message and no additional information. Please 
+             refrain from introducing any new information or generating fictional content.'
+
+  - name: "prices"
+    prompt: 'Given the following pricing details and the user query, please generate an appropriate 
+             response in a manner suitable to the user query. Ensure that the rephrased response is 
+             relevant to the query and conveys the requested information by the user. The rephrased 
+             response should be provided in JSON format, structured as: \n\n
+             {"answer": "rephrased_answer"}\n\n
+             The response should only include the "rephrased_response" field 
+             with the modified answer and no additional information. Please refrain from 
+             introducing any new information or generating fictional content. \n\n
+             pricing details: \n
+             {{pricing}} \n\n
+             user_query: `{{query}}`'

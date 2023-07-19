@@ -1,0 +1,22 @@
+#version: "3.1"
+#
+#stories:
+#- story: order + show menu happy path
+#  steps:
+#  - intent: greet
+#  - action: action_llm_rephrase_response_common
+#  - intent: order
+#  - action: action_llm_rephrase_response_common
+#  - intent: affirm
+#  - action: action_llm_generate_response_menu
+#  - intent: thank
+#  - action: action_llm_rephrase_response_common
+#
+#- story: order + show menu happy path
+#  steps:
+#  - intent: greet
+#  - action: action_llm_rephrase_response_common
+#  - intent: order
+#  - action: action_llm_rephrase_response_common
+#  - intent: deny
+#  - action: action_llm_rephrase_response_goodbye

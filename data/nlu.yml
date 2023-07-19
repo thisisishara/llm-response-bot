@@ -1,0 +1,82 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: menu
+  examples: |
+    - I need the menu
+    - show me your menu
+    - I have no idea what to buy. can you get me the menu?
+    - what type of pizzas do you have?    
+
+- intent: prices
+  examples: |
+    - show me the pizza prices please
+    - can you show me the prices of different pizza types?
+    - show me the price of a large pizza
+    - what is the cost for a small pizza?
+    - how much does a medium pizza cost?
+
+- intent: order
+  examples: |
+    - I need to order a large pizza. Do you guys have any?
+    - Do you have small pizzas?
+    - I'm gonna need two medium sized pizzas
+
+- intent: thank
+  examples: |
+    - thank you
+    - thanks
+    - thank you so much
+    - ty
+    - thanks bud
+    - yo thanks
+    - thank
+    - accept my gratitude

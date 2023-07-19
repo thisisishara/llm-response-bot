@@ -1,0 +1,67 @@
+version: "3.1"
+
+intents:
+  - welcome
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - menu
+  - prices
+  - order
+  - thank
+
+actions:
+  - action_llm_generate_response_common
+  - action_llm_rephrase_response_common
+  - action_llm_rephrase_response_welcome
+  - action_llm_generate_response_prices
+  - action_llm_generate_response_menu
+  - action_llm_rephrase_response_goodbye
+
+responses:
+  utter_welcome:
+  - text: "Hello! Welcome to the Pizza Palace. How may I assist you today?"
+
+  utter_greet:
+  - text: "Hello again!. How may I assist you?
+           things you can do: ask for menu, ask prices, order a pizza"
+
+  utter_goodbye:
+  - text: "Bye! Have a yummy day"
+
+  utter_menu:
+  - text: "Flavor,Size,Price\n
+          Margherita,Small,$8\n
+          Margherita,Medium,$10\n
+          Margherita,Large,$12\n
+          Pepperoni,Small,$9\n
+          Pepperoni,Medium,$11\n
+          Pepperoni,Large,$13\n
+          Veggie Supreme,Small,$10\n
+          Veggie Supreme,Medium,$12\n
+          Veggie Supreme,Large,$14\n
+          Hawaiian,Small,$9\n
+          Hawaiian,Medium,$11\n
+          Hawaiian,Large,$13\n
+          BBQ Chicken,Small,$10\n
+          BBQ Chicken,Medium,$12\n
+          BBQ Chicken,Large,$14\n
+          Meat Lovers,Small,$11\n
+          Meat Lovers,Medium,$13\n
+          Meat Lovers,Large,$15\n"
+  - text: "no menu"
+    channel: "test"
+
+  utter_order:
+  - text: "Hell yeah, we have lots of types of yummy pizzas for you to choose from. Do you want me to get the menu for ya?"
+
+  utter_thank:
+  - text: "Anytime!"
+
+  utter_ask_rephrase:
+  - text: "I'm sorry, I didn't quite get that. Can you please rephrase the question?"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

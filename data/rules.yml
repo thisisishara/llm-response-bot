@@ -1,0 +1,38 @@
+version: "3.1"
+
+rules:
+- rule: get started
+  conversation_start: true
+  steps:
+  - intent: welcome
+  - action: action_llm_rephrase_response_welcome
+
+- rule: greet the user
+  steps:
+  - intent: greet
+  - action: action_llm_rephrase_response_common
+
+- rule: say goodbye
+  steps:
+  - intent: goodbye
+  - action: action_llm_rephrase_response_common
+
+- rule: show menu
+  steps:
+  - intent: menu
+  - action: action_llm_generate_response_common
+
+- rule: show prices
+  steps:
+  - intent: prices
+  - action: action_llm_generate_response_prices
+
+- rule: order
+  steps:
+  - intent: order
+  - action: action_llm_rephrase_response_common
+
+- rule: say anytime
+  steps:
+  - intent: thank
+  - action: action_llm_rephrase_response_common
