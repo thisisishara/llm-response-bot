@@ -36,6 +36,7 @@ def _construct_prompt_from_template(
 ) -> Text:
     for placeholder, value in placeholders.items():
         template = template.replace("{{" + str(placeholder) + "}}", value)
+        template = template.replace("\\n", "\n")
     return template
 
 
