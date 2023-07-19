@@ -13,7 +13,14 @@
 </head>
 
 <body>
-    <div id="rasa-chat-widget" data-websocket-url="http://host.docker.internal/"></div>
+    <div
+            id="rasa-chat-widget"
+            data-websocket-url="http://host.docker.internal/"
+            data-initial-payload="/welcome"
+            data-avatar-url="https://i.imgur.com/PtWDcQ1.png"
+            data-avatar-background="#FFCC80"
+            data-default-open="true"
+    ></div>
     <script src="https://unpkg.com/@rasahq/rasa-chat" type="application/javascript"></script>
 </body>
 
