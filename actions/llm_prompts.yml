@@ -25,9 +25,8 @@ generate:
 # bot utterance
 rephrase:
   - name: "utter_greet"
-    prompt: 'Greet the user according to the way user has greet. Also tell the user something  
-             funny that involves Pizza, could be a joke or a fun fact. The rephrased response 
-             should be provided in JSON format, structured as: \n\n
+    prompt: 'Greet the user according to the way user has greet. Be creative when greeting. 
+             The rephrased response should be provided in JSON format, structured as: \n\n
              {"answer": "greeting"}\n\n
              The greeting should align it with the user and the response should only include 
              the "greeting" field with the generated greeting and no additional information. 
