@@ -50,8 +50,6 @@ responses:
           Meat Lovers,Small,$11\n
           Meat Lovers,Medium,$13\n
           Meat Lovers,Large,$15\n"
-  - text: "no menu"
-    channel: "test"
 
   utter_order:
   - text: "Hell yeah, we have lots of types of yummy pizzas for you to choose from. Do you want me to get the menu for ya?"
