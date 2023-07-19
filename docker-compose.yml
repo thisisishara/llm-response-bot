@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: "llm-demo-nginx"
+    restart: "always"
+    ports:
+      - "80:80"
+    volumes:
+      - "./nginx/index.html:/usr/share/nginx/html/index.html"
+      - "./nginx/default.conf:/etc/nginx/conf.d/default.conf"
+    networks:
+      - "llm_demo_network"
+
+  rasa:
+    build:
+      context: "."
+    container_name: "llm-demo-rasa"
+    restart: "always"
+    volumes:
+      - "./data:/app/data"
+      - "./credentials.yml:/app/credentials.yml"
+      - "./endpoints.yml:/app/endpoints.yml"
+      - "./domain.yml:/app/domain.yml"
+      - "./config.yml:/app/config.yml"
+    networks:
+      - "llm_demo_network"
+
+  actions:
+    build:
+      context: "./actions"
+    container_name: "llm-demo-actions"
+    restart: "always"
+    volumes:
+      - "./actions:/app/actions"
+    networks:
+      - "llm_demo_network"
+    env_file:
+      - ".env"
+
+networks:
+  llm_demo_network:
