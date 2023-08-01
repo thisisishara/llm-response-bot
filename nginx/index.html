@@ -4,18 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://rasa.com/favicon-32x32.png" />
+    <title>LLM Powered Bot Responses & Prompt Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
         body {
             background-color: #9FA8DA;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-div {
+            display: flex;
+            justify-content: center;
+            align-items: left;
+            height: 100vh;
+            margin: 0 10rem;
+            padding: 0;
+            flex-direction: column;
+        }
+
+        .heading {
+            font-family: 'Poppins', sans-serif;
+            font-size: 4rem;
+            font-weight: bold;
+        }
+
+        .heading-font {
+            background: linear-gradient(to left, #42525b, #263238);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .names {
+            background: linear-gradient(to right, #1E88E5, #149edd);
+            color: white;
+            padding: 10px;
+            border-radius: 0.4rem;
+            width: fit-content;
+            padding: 0.5rem 0.7rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 600 !important;
+            height: fit-content;
         }
     </style>
 </head>
 
 <body>
+    <div class="header-div" style>
+        <p class="heading">⚡<br><span class="heading-font">LLM Powered Bot Responses</span><br><span
+                class="heading-font">& Prompt Management</span></p>
+        <div style="display: flex; flex-direction: row;">
+            <!-- <p class="names">BY ISHARA & DINUSHI</p> -->
+            <p style="color: #2d373b;">By Ishara & Dinushi</p>
+            <img style="padding-top: 6px; height: 50px; width: 100px; filter: grayscale(100%);"
+                src="https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_4c90301bc925592ec131471cf70b793b/rasa.png" />
+            <p style="margin-left: -20px; color: #2d373b;">Rasa LLM Community Challenge </p>
+            <p style="color: #2d373b; padding-left: 30px;">27 July, 2023</p>
+        </div>
+    </div>
     <div
             id="rasa-chat-widget"
-            data-websocket-url="http://host.docker.internal/"
+            data-websocket-url="http://localhost/"
             data-initial-payload="/welcome"
             data-avatar-url="https://i.imgur.com/PtWDcQ1.png"
             data-avatar-background="#FFCC80"
